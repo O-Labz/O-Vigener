@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class VigenerApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 		SpringApplication.run(VigenerApplication.class, args);
+		System.out.println("Yayyyyyyyyy it ah work!!!!");
 	}
 
 }
