@@ -8,7 +8,6 @@ public class VigenerApplication {
 
 	public static void main(String[] args) throws Exception{
 		SpringApplication.run(VigenerApplication.class, args);
-		System.out.println("Yayyyyyyyyy it ah work!!!!");
 	}
 
 }
