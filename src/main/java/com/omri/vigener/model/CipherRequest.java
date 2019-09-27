@@ -2,11 +2,11 @@ package com.omri.vigener.model;
 
 public class CipherRequest {
 	
-	String key;
+	private String key;
 	
-	String rawtext;
+	private String rawtext;
 	
-	Boolean encrypt;
+	private Boolean encrypt;
 	
 
 	/**
