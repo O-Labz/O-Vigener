@@ -1,7 +1,7 @@
 package com.omri.vigener.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,14 +19,18 @@ public class CipherController {
 
 	private CipherResponse response;
 
-	@GetMapping("/encrypt")
+	@PostMapping("/encrypt")
 	public CipherResponse encrypt (@RequestBody CipherRequest cipherRequest) {
 		
 		response = new CipherResponse ();
 
 		try {
 			//  Block of code to try
-			response = cipherservice.encryptText(cipherRequest);
+			if(cipherRequest.getEncrypt()) {
+				response = cipherservice.encryptText(cipherRequest);
+			}else{
+				response = cipherservice.decryptText(cipherRequest);
+			}
 		}
 		catch(Exception e) {
 			//  Block of code to handle errors
@@ -36,7 +40,7 @@ public class CipherController {
 		return response;
 	}
 
-	@GetMapping("/decrypt")
+	@PostMapping("/decrypt")
 	public CipherResponse decrypt (@RequestBody CipherRequest cipherRequest) {
 
 		response = new CipherResponse ();
