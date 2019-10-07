@@ -1,6 +1,7 @@
 package com.omri.vigener.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ public class CipherController {
 	private CipherResponse response;
 
 	@PostMapping("/encrypt")
+	@CrossOrigin(origins = "http://localhost:3000")
 	public CipherResponse encrypt (@RequestBody CipherRequest cipherRequest) {
 		
 		response = new CipherResponse ();
