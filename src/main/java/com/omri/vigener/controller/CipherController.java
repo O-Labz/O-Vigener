@@ -12,7 +12,7 @@ import com.omri.vigener.model.CipherResponse;
 import com.omri.vigener.service.CipherService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/cipher")
 public class CipherController {
 
