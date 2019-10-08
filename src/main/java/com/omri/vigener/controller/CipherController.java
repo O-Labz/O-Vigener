@@ -12,6 +12,7 @@ import com.omri.vigener.model.CipherResponse;
 import com.omri.vigener.service.CipherService;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/cipher")
 public class CipherController {
 
@@ -20,8 +21,7 @@ public class CipherController {
 
 	private CipherResponse response;
 
-	@PostMapping("/encrypt")
-	@CrossOrigin(origins = "http://localhost:3000")
+	@PostMapping(value = "/encrypt", consumes = "application/json", produces = "application/json")
 	public CipherResponse encrypt (@RequestBody CipherRequest cipherRequest) {
 		
 		response = new CipherResponse ();
